@@ -1,0 +1,111 @@
+
+<!--
+File: index.html
+GUI Assignment: Making validation, sliders and tabs using validator jquery and jquery ui for a dynamic Multiplication table
+Daury Argueta, UMass Lowell Computer Science, daury_argueta@student.uml.edu 
+
+purpose: Had to write javascript jquery, html and css inorder to display a dynamic Multiplication table. Had to
+create a table completely dynamically based on parameters entered in an HTML form.For this assignment we are required
+ to do the validation using the jQuery Validation plugin. This plugin will allow you to do more powerful validation and 
+ make the application more responsive to users. Then, I had to explore yet another JavaScript library called the
+ jQuert user interface (ui) library to see its similarities and differences as compared to the library that we have
+  already looked at: the jQuery Validator plugin.
+
+Copyright (c) 2021 by Daury. All rights reserved. May be freely copied or excerpted for educational 
+purposes with credit to the author.
+
+Updated by Daury on June 23, 2022 at 11:00 PM
+  src: Sources linked are commented in the code showing where I used what.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daury's Multiplication Table</title>
+    <link rel="stylesheet" href="DAMultipStyle.css" />
+    <!-- At first it was not working, I was not seeing the slider. 
+    I was not sure what was going on. I then realized that I had to add the 
+    css cdn styl link as well from the source code of https://jqueryui.com/slider/ -->
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"
+    />
+  </head>
+  <body>
+    <h2 class="myTitle">Daurys Dynamic Multiplication Table!</h2>
+    <div id="container">
+      <!--
+        https://stackoverflow.com/questions/3547035/getting-html-form-values
+      -->
+      <form id="userInputs">
+        <label for="xAxisStart">Enter the x Axis Min val:</label>
+        <input
+          type="text"
+          id="xAxisStart"
+          name="xAxisStart"
+          placeholder="Min Row Val..."
+          min="-50"
+        /><br />
+        <div id="xAxisStart_slider"></div>
+        <label for="xAxisEnd">Enter the x Axis Max val:</label>
+        <input
+          type="text"
+          id="xAxisEnd"
+          name="xAxisEnd"
+          placeholder="Max Row Val..."
+          max="50"
+        /><br />
+        <div id="xAxisEnd_slider"></div>
+        <label for="yAxisStart">Enter the y Axis Min:</label>
+        <input
+          type="text"
+          id="yAxisStart"
+          name="yAxisStart"
+          placeholder="Min Column Val..."
+          min="-50"
+        />
+        <br />
+        <div id="yAxisStart_slider"></div>
+        <label for="yAxisEnd">Enter the y Axis Max:</label>
+        <input
+          type="text"
+          id="yAxisEnd"
+          name="yAxisEnd"
+          placeholder="Max Column Val..."
+          max="50"
+        />
+        <br /><br />
+        <div id="yAxisEnd_slider"></div>
+      </form>
+      <div class="containerTable">
+        <div id="table">
+          <!--Used https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onclick as reference for this.-->
+          <button id="generate" type="button">Generate</button>
+        </div>
+      </div>
+      <!--I will USE THIS SPAN tag inorder to display error messages to the user when ever a wrong input is placed.-->
+      <span id="errorMessage"></span>
+      <!--Creating a button so we can create and delete tabs-->
+      <button type="button" id="newTab">Create Tab</button>
+      <button type="button" id="deleteTab">Delete Tab</button>
+    </div>
+    <div id="tabs">
+      <ul></ul>
+    </div>
+    <!-- https://jqueryvalidation.org -->
+    <!--
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/additional-methods.min.js"></script>
+    -->
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="DAMultipJS.js"></script>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+/*
+File: DAMultipStyle.css
+GUI Assignment: Making validation, sliders and tabs using validator jquery and jquery ui for a dynamic Multiplication table
+Daury Argueta, UMass Lowell Computer Science, daury_argueta@student.uml.edu 
+
+purpose: Had to write javascript jquery, html and css inorder to display a dynamic Multiplication table. Had to
+create a table completely dynamically based on parameters entered in an HTML form.For this assignment we are required
+ to do the validation using the jQuery Validation plugin. This plugin will allow you to do more powerful validation and 
+ make the application more responsive to users. Then, I had to explore yet another JavaScript library called the
+ jQuert user interface (ui) library to see its similarities and differences as compared to the library that we have
+  already looked at: the jQuery Validator plugin.
+
+Copyright (c) 2021 by Daury. All rights reserved. May be freely copied or excerpted for educational 
+purposes with credit to the author.
+
+Updated by Daury on June 23, 2022 at 11:00 PM
+  src: Sources linked are commented in the code showing where I used what.
+*/
+.myTitle {
+  background-color: rgb(114, 155, 155);
+  width: 30%;
+  font-size: 35px;
+  text-align: center;
+  font-family: "Brush Script MT", cursive;
+  margin: auto;
+}
+/*
+styling container
+*/
+#container {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  color: rgb(0, 38, 255);
+  border-style: double;
+  border-color: blue;
+  margin: auto;
+  width: 30%;
+  border-radius: 5px;
+  padding: 40px;
+  overflow: auto;
+}
+
+label.error {
+  display: block;
+  font-size: small;
+  color: red;
+  font-size: 14px;
+  margin: 0px;
+  font-weight: bold;
+  border-style: groove;
+  border-color: red;
+  padding: 1px;
+}
+
+#containerTable {
+  width: 60%;
+}
+
+body {
+  background-color: rgb(224, 160, 41);
+  font-family: Arial, sans-serif;
+}
+table {
+  padding: 40px;
+  background-color: antiquewhite;
+}
+
+td {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid rgb(235, 6, 6);
+}
+/*
+this is for the is to creating the box and scrollers for the table.
+*/
+.tableScoller {
+  width: 1000px;
+  height: 500px;
+  overflow: auto;
+  margin: auto;
+}
+
+#xAxisStart_slider {
+  margin-top: 7px;
+  margin-bottom: 4px;
+}
+
+#xAxisEnd_slider {
+  margin-top: 7px;
+  margin-bottom: 2px;
+}
+
+#yAxisStart_slider {
+  margin-top: 7px;
+  margin-bottom: 2px;
+}
+
+#yAxisEnd_slider {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
